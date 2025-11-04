@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://public-frontend-cos.metadl.com/mgx/img/favicon.png" type="image/png">
+    <title>Hand Gesture Shape Controller</title>
+  <script type="module" crossorigin src="/assets/index-JruI7Q_P.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BAeS3hNw.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Hand Gesture Shape Controller</h1>
+            <p class="subtitle">Control shapes with your hand gestures</p>
+        </header>
+
+        <div class="main-content">
+            <div class="video-container">
+                <video id="videoElement" autoplay playsinline></video>
+                <canvas id="canvas"></canvas>
+                <div id="loadingOverlay" class="loading-overlay">
+                    <div class="spinner"></div>
+                    <p>Initializing camera and hand tracking...</p>
+                </div>
+            </div>
+
+            <div class="controls-panel">
+                <div class="instructions">
+                    <h3>Gestures Guide</h3>
+                    <ul>
+                        <li><strong>Open Palm (5 fingers):</strong> Circle</li>
+                        <li><strong>Fist (0 fingers):</strong> Square</li>
+                        <li><strong>Peace Sign (2 fingers):</strong> Triangle</li>
+                        <li><strong>Pinch (thumb + index):</strong> Control size</li>
+                        <li><strong>Hand Height:</strong> Change color</li>
+                    </ul>
+                </div>
+
+                <div class="status-panel">
+                    <h3>Status</h3>
+                    <div class="status-item">
+                        <span>Camera:</span>
+                        <span id="cameraStatus" class="status-value">Inactive</span>
+                    </div>
+                    <div class="status-item">
+                        <span>Hand Detected:</span>
+                        <span id="handStatus" class="status-value">No</span>
+                    </div>
+                    <div class="status-item">
+                        <span>Current Shape:</span>
+                        <span id="shapeStatus" class="status-value">None</span>
+                    </div>
+                    <div class="status-item">
+                        <span>Size:</span>
+                        <span id="sizeStatus" class="status-value">0</span>
+                    </div>
+                </div>
+
+                <button id="startButton" class="start-button">Start Camera</button>
+                <button id="clearButton" class="clear-button">Clear Canvas</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
